@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Acme Cloud – Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0F172A; --muted: #475569; --brand: #7C3AED; /* BUG 1: wrong brand colour */
+    --bg: #FFFFFF; --soft: #F1F5F9; --line: #E2E8F0;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); }
+  body { font-family: 'Inter', sans-serif; color: var(--ink); width: 1280px; line-height: 1.4; }
+  a { text-decoration: none; color: inherit; }
+
+  .btn { display: inline-block; padding: 12px 24px; border-radius: 8px; font-size: 16px; font-weight: 600; line-height: 1.4; }
+  .btn-primary { background: var(--brand); color: #FFFFFF; }
+  .btn-secondary { background: var(--bg); color: var(--ink); border: 1px solid var(--line); padding: 11px 23px; }
+
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 80px; border-bottom: 1px solid var(--line); }
+  .logo { font-size: 22px; font-weight: 700; }
+  .links { display: flex; align-items: center; gap: 32px; }
+  .links a.link { font-size: 16px; font-weight: 500; color: var(--muted); }
+
+  .hero { background: var(--soft); padding: 96px 80px; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; }
+  .hero h1 { margin: 0; font-size: 56px; font-weight: 700; line-height: 1.2; }
+  .hero p { margin: 0; width: 720px; font-size: 20px; color: var(--muted); }
+  .ctas { display: flex; gap: 16px; }
+
+  .features { padding: 80px; display: flex; flex-direction: column; gap: 40px; }
+  .features h2 { margin: 0; font-size: 36px; font-weight: 700; }
+  .cards { display: flex; gap: 24px; align-items: flex-start; }
+  .card { flex: 1; padding: 28px; border: 1px solid var(--line); border-radius: 12px; display: flex; flex-direction: column; gap: 12px; }
+  .icon { width: 40px; height: 40px; border-radius: 8px; background: #E0E7FF; }
+  .card h3 { margin: 0; font-size: 20px; font-weight: 600; }
+  .card p { margin: 0; font-size: 16px; color: var(--muted); }
+
+  footer { background: var(--ink); color: #CBD5E1; font-size: 14px; display: flex; justify-content: space-between; padding: 32px 80px; }
+</style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Acme Cloud</div>
+    <div class="links">
+      <a class="link" href="#">Product</a>
+      <a class="link" href="#">Pricing</a>
+      <a class="link" href="#">Company</a>
+      <a class="btn btn-secondary" href="#">Sign in</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Ship faster with total confidence</h1>
+    <p>Acme Cloud deploys, monitors and scales your apps automatically, so your team can focus on building features customers love.</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="#">Start free trial</a>
+      <a class="btn btn-secondary" href="#">Book a demo</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>Everything you need to go live</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="icon"></div>
+        <h3>One-click deploys</h3>
+        <p>Push to main and your app is live in under a minute, with automatic rollbacks.</p>
+      </div>
+      <div class="card">
+        <div class="icon"></div>
+        <h3>Built-in monitoring</h3>
+        <p>Uptime, latency and error alerts out of the box. No extra setup required.</p>
+      </div>
+      <div class="card">
+        <div class="icon"></div>
+        <h3>Scales with you</h3>
+        <p>Handle traffic spikes automatically and only pay for what you actually use.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Acme Cloud, Inc.</span>
+    <span>Privacy · Terms · Contact</span>
+  </footer>
+</body>
+</html>

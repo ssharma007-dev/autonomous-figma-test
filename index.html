@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Autonomous Figma workaround test</title>
+<style>body{font-family:system-ui,sans-serif;max-width:640px;margin:40px auto;padding:0 16px;line-height:1.6}</style></head>
+<body>
+<h1>Autonomous Figma workaround test (ZD-54827)</h1>
+<ul>
+  <li><a href="design/">design/</a>: Figma frame exported as PNG at 1x (Run 1 → baseline)</li>
+  <li><a href="site/">site/</a>: faithful implementation (Run 2: shows noise from Figma vs browser rendering)</li>
+  <li><a href="site-bugs/">site-bugs/</a>: implementation with 3 seeded bugs (Run 3: should be caught)</li>
+</ul>
+<p>Seeded bugs: (1) primary button colour #7C3AED instead of #4F46E5, (2) "Docs" nav link missing, (3) headline reads "Ship faster with total confidence".</p>
+</body></html>
