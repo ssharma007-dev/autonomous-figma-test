@@ -14,6 +14,13 @@ Seeded bugs on site-bugs:
 2. "Docs" link is missing from the nav
 3. Headline reads "Ship faster with total confidence"
 
+## How the Figma link works (verified in Chrome, 2026-10-28)
+
+- The Figma REST API (`GET /v1/images/<fileKey>?ids=<nodeId>&format=png&scale=1`, token scope `file_content:read`) returns a public PNG link on Figma's S3 storage. It needs no login, displays in Chrome (no download header) and expires after about 30 days.
+- Opened directly, it only looks right when the Chrome viewport exactly matches the image size. Otherwise Chrome shrinks it and adds a dark background.
+- Through `wrapper/?img=<link>` it renders at 1x with no margins. The Chrome screenshot is pixel-identical to the Figma image.
+- The link only has to work for Run 1. After that, Eyes keeps its own copy as the baseline.
+
 ## Step 1: Create the Custom Flow
 
 Requirement: an Autonomous sandbox team (not a customer org).
@@ -21,7 +28,10 @@ Requirement: an Autonomous sandbox team (not a customer org).
 1. Create a Custom Flow named `Figma workaround – Home`.
 2. Set the environment to Chrome, viewport **1280 x 1050**. The width must be exactly 1280 to match the Figma frame.
 3. Steps:
-   - Go to https://ssharma007-dev.github.io/autonomous-figma-test/design/
+   - Go to the Figma-hosted image, through the wrapper (no hosting needed):
+     https://ssharma007-dev.github.io/autonomous-figma-test/wrapper/?img=https%3A%2F%2Ffigma-alpha-api.s3.us-west-2.amazonaws.com%2Fimages%2Fa91006e5-00ec-4bf6-89c5-6510eca532ef
+     (made with `./get-figma-link.sh "<Figma frame link>"`; the Figma link expires 28 Nov 2026.
+     Fallback if it has expired: https://ssharma007-dev.github.io/autonomous-figma-test/design/)
    - Visually check the full page (name the checkpoint `Home`)
 4. Set the match level to **Layout**.
 
